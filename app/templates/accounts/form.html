@@ -1,0 +1,50 @@
+<form action="" method="post" id="account-form">
+  <h3 class="mb-3 h3">Cadastre-se</h3>
+  {{ form.csrf_token() }}
+  <div class="form-group">
+    {{ form.name.label }}
+    {{ form.name(class="form-control") }}
+  </div>
+  <div class="form-group">
+    {{ form.email.label }}
+    {{ form.email(class="form-control") }}
+  </div>
+  <div class="form-group">
+    {{ form.password.label }}
+    {{ form.password(class="form-control") }}
+    <small id="passwordHelpBlock" class="form-text text-muted">
+      Sua senha deve ter entre 8 e 32 caracteres.
+    </small>
+  </div>
+  <div class="form-group">
+    {{ form.confirm.label }}
+    {{ form.confirm(class="form-control") }}
+  </div>
+  {{ form.submit_button(class="btn btn-primary w-100", onclick="disable_submit()") }}
+</form>
+
+<script>
+
+  let form = document.getElementById('account-form')
+  
+  function form_is_valid() {
+    return (
+      form.name.checkValidity() && 
+      form.email.checkValidity() && 
+      form.password.checkValidity() && 
+      form.confirm.checkValidity() &&
+      (form.password.value == form.confirm.value) && 
+      (form.confirm.value.length + form.password.value.length) >= 16
+      )
+  }
+
+  function disable_submit() {
+    if (form_is_valid()) {
+      form.submit_button.disabled = true;
+      form.submit_button.value = 'Enviando';
+      form.submit();
+    } else {
+      return ;
+    }
+  }
+</script>

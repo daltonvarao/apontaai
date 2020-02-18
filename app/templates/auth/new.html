@@ -1,0 +1,26 @@
+{% extends './base_login.html' %}
+
+
+{% block content %}
+  <div class="form-panel d-flex justify-content-around align-items-center">
+    <div class="d-none d-md-block text-white">
+      <h1 class="display-4">
+        Algum problema?
+        <br>    
+        Aponta ai!
+        <br>
+        Simples assim.
+      </h1>
+      <a class="btn btn-outline-primary btn-lg rounded" href="{{ url_for('accounts.new') }}">Criar uma conta</a>
+      <a class="btn btn-outline-light btn-lg rounded" href="{{ url_for('home.index') }}">Página inicial</a>
+    </div>
+    <div class="jumbotron col-11 col-md-6 col-lg-4 col-xg-3 bg-white shadow-sm mb-0">
+      <h4 class="mb-3">Entre com seu email</h4>
+      {% include 'auth/form.html' %}
+      <div class="d-none d-flex d-md-none justify-content-around align-items-center mt-4">
+        <a href="{{ url_for('accounts.new') }}">Criar uma conta</a>
+        <a href="{{ url_for('home.index') }}">Página inicial</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

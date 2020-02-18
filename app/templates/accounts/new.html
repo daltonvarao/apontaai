@@ -1,0 +1,13 @@
+{% extends './base_login.html' %}
+
+
+{% block content %}
+  <div class="form-panel d-flex justify-content-center align-items-center">
+    <div class="jumbotron col-11 col-md-6 col-xg-3 bg-white mx-auto shadow-sm mb-0">
+      {% include 'accounts/form.html' %}
+      <div class="mt-4 d-flex flex-row justify-content-center align-items-center">
+        <p class="join-text text-center">Já possui conta? <a href="{{ url_for('auth.login') }}">Entre</a></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

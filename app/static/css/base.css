@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
+
+:root {
+  --color-green: #79bd8f;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f4fffc;
+  font-family: 'Lexend Deca', sans-serif;
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-green);
+}
+
+a:hover {
+  color: #5f9c73;
+}
+
+.border-left-4 {
+  border-left-width: 4px !important;
+}
+
+ion-icon {
+  font-size: 96px;
+  color: #555;
+  margin-top: 1rem;
+}

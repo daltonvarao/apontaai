@@ -1,0 +1,30 @@
+.brand {
+  margin: 0;
+}
+
+.navigation {
+  background-color: #79bd8f;
+  color: #fff;
+}
+
+.navigation-nav {
+}
+
+.navigation-nav li {
+  list-style: none;
+  margin-right: 1rem;
+}
+
+.navigation-nav li:last-child {
+  margin-right: 0;
+}
+
+.navigation-nav li a {
+  color: rgba(255, 255, 255, 0.85);
+  margin-left: 0.25rem;
+  text-decoration: none;
+}
+
+.navigation-nav li a:hover {
+  color: #fff;
+}

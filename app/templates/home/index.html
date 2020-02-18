@@ -1,0 +1,93 @@
+{% extends './layout.html' %}
+
+
+{% block content %}
+  <div class="row">
+    {% if g.user.is_authenticated %}
+      <div class="col-12 col-md-3 mb-3">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <div class="text-center">
+              <img src="https://api.adorable.io/avatars/120/{{ g.user.email }}.png" class="mb-4 rounded-circle" alt="...">
+            </div>
+            <div class="card-text">
+              <i class="far fa-user"></i>
+              {{ g.user.name }}
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Minhas reclamações</li>
+            <li class="list-group-item">Notificações</li>
+            <li class="list-group-item">Configurações</li>
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+    <div class="col-12 {{'col-md-9' if g.user.is_authenticated else ''}}">
+      <div class="card-deck mb-2 mb-md-4">
+        <div class="card border-0 shadow-sm text-center">
+          <i class="text-warning card-img-top fa fa-exclamation-triangle fa-5x mt-4"></i>
+          <div class="card-body">
+            <h4 class="card-title">Fazer uma reclamação</h4>
+            <p class="card-text">
+              Registre aqui uma ocorrência fora do normal
+            </p>
+          </div>
+        </div>
+        <div class="card border-0 shadow-sm text-center">
+          <i class="text-danger card-img-top far fa-times-circle fa-5x mt-4"></i>
+          <div class="card-body">
+            <h4 class="card-title">Problemas a solucionar</h4>
+            <p class="card-text">
+              Acompanhe as reclamações a serem solucionadas
+            </p>
+          </div>
+        </div>
+        <div class="card border-0 shadow-sm text-center">
+          <i class="text-success card-img-top far fa-check-circle fa-5x mt-4"></i>        
+          <div class="card-body">
+            <h4 class="card-title">Problemas solucionados</h4>
+            <p class="card-text">
+              Avalie reclamações que foram solucionadas
+            </p>
+          </div>
+        </div>
+      </div>
+      <h4 class="mb-4">Fique atento aos casos</h4>
+      <div class="card-deck text-center">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body d-flex align-items-center">
+            <i class="fa fa-lightbulb text-warning fa-2x mr-3"></i>
+            <p class="card-text">
+              Disperdício energético
+            </p>
+          </div>
+        </div>
+        <div class="card border-0 shadow-sm">
+          <div class="card-body d-flex align-items-center">
+            <i class="fa fa-tint-slash text-info fa-2x mr-3"></i>
+            <p class="card-text">
+              Disperdício hídrico
+            </p>
+          </div>
+        </div>
+        <div class="card border-0 shadow-sm">
+          <div class="card-body d-flex align-items-center">
+            <i class="fa fa-recycle text-success fa-2x mr-3"></i>
+            <p class="card-text">
+              Ambiente poluído
+            </p>
+          </div>
+        </div>
+        <div class="card border-0 shadow-sm">
+          <div class="card-body d-flex align-items-center">
+            <i class="fa fa-wheelchair fa-2x mr-3"></i>
+            <p class="card-text">
+              Falta acessibilidade
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
